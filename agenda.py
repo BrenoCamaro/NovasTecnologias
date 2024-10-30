@@ -3,7 +3,6 @@ import sys
 def grava(contato):
     """
     Gravar os argumentos recebidos em um arquivo
-
     """
     arquivo = open("Agenda.txt", "a")
 
@@ -18,7 +17,6 @@ def grava(contato):
 def le():
     """
     Lê a entrada do usuário e grava em um arquivo
-
     """
     contato = []
 
@@ -34,8 +32,18 @@ def le():
 
     grava(contato)
 
-    
+    return
 
+def lista(nomeArquivo):
+    """
+    Faz a leitura do arquivo cujo nome for passado como argumento
+    """
+    arquivo = open(f"{nomeArquivo}", "r")
+    linha = arquivo.readline()
 
+    while linha != "":
+        print(linha)
+        linha = arquivo.readline()
 
+    return
 
