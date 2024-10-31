@@ -30,7 +30,7 @@ def le():
     contato.append(endereco)
     contato.append(aniversario)
 
-    grava(contato)
+    return contato
 
 
 def lista(nomeArquivo):
@@ -59,7 +59,7 @@ def apaga(nomeArquivo, numeroDaLinha):
         print("\nNúmero da linha inválido!\n")
 
     arquivo.close()
-    
+
     arquivo = open(f"{nomeArquivo}", "w")
     arquivo.writelines(linhas)
     arquivo.close()
