@@ -66,6 +66,9 @@ def apaga(nomeArquivo, numeroDaLinha):
     arquivo.close()
 
 def edita(nomeArquivo, numeroDaLinha, novoConteudo):
+    """
+    Modifica um registro do arquivo recebido como argumento na linha também especificada como argumento
+    """
     arquivo = open(f"{nomeArquivo}", "r")
     linhas = arquivo.readlines()
 
@@ -82,8 +85,6 @@ def edita(nomeArquivo, numeroDaLinha, novoConteudo):
     arquivo.close()
     print(f"Linha {numeroDaLinha} editada com sucesso.")
 
-
-
 def contarLinhas(nomeArquivo):
     """
     Retorna a quantidade de linhas do arquivo recebido como argumento
@@ -92,6 +93,22 @@ def contarLinhas(nomeArquivo):
     linhas = arquivo.readlines()
     arquivo.close()
     return len(linhas)
+
+def verificarbirthday(nomeArquivo, numeroDaLinha):
+    arquivo = open(f"{nomeArquivo}", "r")
+    linhas = arquivo.readlines()
+    arquivo.close()
+
+    if 0 <= numeroDaLinha < len(linhas):
+        campos = linhas[numeroDaLinha].strip().split(";")
+        aniversario = campos[3] if len(campos) > 3 else None
+        return aniversario
+    else:
+        print("\nNúmero da linha inválido!\n")
+        return None
+    
+
+
 
 
 
