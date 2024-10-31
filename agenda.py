@@ -32,7 +32,6 @@ def le():
 
     grava(contato)
 
-    return
 
 def lista(nomeArquivo):
     """
@@ -45,5 +44,17 @@ def lista(nomeArquivo):
         print(linha)
         linha = arquivo.readline()
 
-    return
+    arquivo.close()
+
+def apaga(nomeArquivo, numeroDeLinhas):
+    arquivo = open(f"{nomeArquivo}", "r")
+    linha = arquivo.readlines()
+
+def contarLinhas(nomeArquivo):
+    """
+    Retorna a quantidade de linhas do arquivo recebido como argumento
+    """
+    arquivo = open(f"{nomeArquivo}", "r")
+    linhas = arquivo.readlines()
+    return len(linhas)
 
