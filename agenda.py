@@ -46,9 +46,24 @@ def lista(nomeArquivo):
 
     arquivo.close()
 
-def apaga(nomeArquivo, numeroDeLinhas):
+def apaga(nomeArquivo, numeroDaLinha):
+    """
+    Apaga um registro do arquivo informado como arqumento na linha passada como argumento
+    """
     arquivo = open(f"{nomeArquivo}", "r")
-    linha = arquivo.readlines()
+    linhas = arquivo.readlines()
+
+    if 0 <= numeroDaLinha < len(linhas):
+        del linhas[numeroDaLinha]
+    else:
+        print("\nNúmero da linha inválido!\n")
+
+    arquivo.close()
+    
+    arquivo = open(f"{nomeArquivo}", "w")
+    arquivo.writelines(linhas)
+    arquivo.close()
+
 
 def contarLinhas(nomeArquivo):
     """
@@ -56,5 +71,7 @@ def contarLinhas(nomeArquivo):
     """
     arquivo = open(f"{nomeArquivo}", "r")
     linhas = arquivo.readlines()
+    arquivo.close()
     return len(linhas)
+
 

@@ -15,8 +15,8 @@ while rodando:
         case 2:
             agenda.lista(arquivo)
         case 4:
-            qtdLinhas = int(agenda.contarLinhas(arquivo))
-            print(f"Qtd de linhas: {qtdLinhas}")
+            linha = int(input("\nInforme o número da linha: "))
+            agenda.apaga(arquivo, linha)
         case 5:
             print("\nEncerrando programa...\n")
             rodando = False
