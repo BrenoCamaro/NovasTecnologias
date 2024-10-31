@@ -57,12 +57,31 @@ def apaga(nomeArquivo, numeroDaLinha):
         del linhas[numeroDaLinha]
     else:
         print("\nNúmero da linha inválido!\n")
+        return
 
     arquivo.close()
 
     arquivo = open(f"{nomeArquivo}", "w")
     arquivo.writelines(linhas)
     arquivo.close()
+
+def edita(nomeArquivo, numeroDaLinha, novoConteudo):
+    arquivo = open(f"{nomeArquivo}", "r")
+    linhas = arquivo.readlines()
+
+    if 0 <= numeroDaLinha < len(linhas):
+        listaVirandoString = ";".join(novoConteudo)
+        linhas[numeroDaLinha] = listaVirandoString + "\n"
+    else:
+        print("\nNúmero da linha inválido!\n")
+        return
+    arquivo.close()
+
+    arquivo = open(f"{nomeArquivo}", "w")
+    arquivo.writelines(linhas)
+    arquivo.close()
+    print(f"Linha {numeroDaLinha} editada com sucesso.")
+
 
 
 def contarLinhas(nomeArquivo):
@@ -73,5 +92,7 @@ def contarLinhas(nomeArquivo):
     linhas = arquivo.readlines()
     arquivo.close()
     return len(linhas)
+
+
 
 

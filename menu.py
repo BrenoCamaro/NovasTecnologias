@@ -15,6 +15,10 @@ while rodando:
             agenda.grava(novoContato)
         case 2:
             agenda.lista(arquivo)
+        case 3:
+            linha = int(input("\nInforme o número da linha: "))
+            novoConteudo = agenda.le()
+            agenda.edita(arquivo, linha, novoConteudo)
         case 4:
             linha = int(input("\nInforme o número da linha: "))
             agenda.apaga(arquivo, linha)
