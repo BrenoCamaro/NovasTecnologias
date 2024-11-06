@@ -3,3 +3,7 @@ class Cliente:
         self.nome = nome
         self.sobrenome = sobrenome
         self.cpf = cpf
+
+    def dados_cliente(self):
+        print(f"\nNome: {self.nome} {self.sobrenome}")
+        print(f"\nCPF: {self.cpf}")
